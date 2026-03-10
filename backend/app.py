@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+load_dotenv()
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from pymongo import MongoClient
@@ -7,7 +9,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-MONGO_URI = os.environ.get("MONGO_URI", "mongodb+srv://admin:password22072001@cluster0.aoghqrm.mongodb.net/meal_tracker")
+MONGO_URI = os.environ.get("MONGO_URI")
 client = MongoClient(MONGO_URI)
 db = client["meal_tracker"]
 logs_col    = db["intake_logs"]
