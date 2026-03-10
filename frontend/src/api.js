@@ -1,4 +1,4 @@
-const BASE = "http://localhost:5000/api";
+const BASE = "https://sreemealtracker.onrender.com/api";
 
 export const api = {
   getMealPlan: () => fetch(`${BASE}/meal-plan`).then(r => r.json()),
